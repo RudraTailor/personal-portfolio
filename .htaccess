@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # If the request isn’t for an existing file…
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # …and isn’t for an existing directory…
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # …then serve index.html instead:
+  RewriteRule . /index.html [L]
+</IfModule>
